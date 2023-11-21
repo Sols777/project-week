@@ -1,10 +1,15 @@
 <h1>Venues</h1>
-
-<ul>
-  <% @venues.each do |venue| %>
-    <li><%= link_to venue.name, venue_path(venue) %><%= link_to "🗑️" , venue_path(venue),data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} , class:"btn btn-danger" %></li>
-  <% end %>
-</ul>
+<div class="container">
+  <div class="row">
+    <ul>
+      <% @venues.each do |venue| %>
+        <div class="col"style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cloudinary_pic(venue) %>')">
+          <li><%= link_to venue.name, venue_path(venue) %><%= link_to "🗑️" , venue_path(venue),data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} , class:"btn btn-danger" %></li>
+        </div>
+      <% end %>
+    </ul>
+  </div>
+</div>
 
 
 <%=  link_to "+add a new venue"  , new_venue_path , class:"btn btn-primary"%>
