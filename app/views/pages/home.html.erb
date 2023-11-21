@@ -1,2 +1,46 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<!--navbar--> 
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+    <div class="container-fluid">
+      <%= link_to "#", class: "navbar-brand" do %>
+        <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
+      <% end %>
+  
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto">
+          <%# if user_signed_in? %>
+           
+            <li class="nav-item dropdown">
+              <%= image_tag "https://ca.slack-edge.com/T02NE0241-U03NM82921M-c4fd7de1a5ba-512", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                <%= link_to "My Bookings", bookings_path, class: "dropdown-item" %>
+                <%= link_to "Log out", "#", class: "dropdown-item", data: {turbo_method: :delete} %>
+              </div>
+            </li>
+          <%# else %>
+            <!--li class="nav-item"-->
+              <%#= link_to "Login", new_user_session_path, class: "nav-link" %>
+            <!--/li-->
+          <%# end %>
+        </ul>
+      </div>
+    </div>
+</div>
+  
+
+
+<!--banner--> 
+<div class="banner">
+    <div class="container">
+      <h1>Discover the best <strong>RAVES</strong></h1>
+      <p>Ever wanted to party in a Coal Mine? Join members like Pete and party until the Secret Services fucks us up.</p>
+      <%= link_to 'Get me in', '#', class: 'btn btn-flat' %>
+    </div>
+  </div>
+</div>
+
+<!--map--> 
+<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d7128.665218391764!2d-8.693629477518764!3d41.181612954183905!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1spt-PT!2spt!4v1700571042816!5m2!1spt-PT!2spt" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
