@@ -2,7 +2,7 @@
 
 <ul>
   <% @venues.each do |venue| %>
-    <li><%= link_to venue.title , venue_path(venue) %><%= link_to "🗑️" , venue_path(venue),data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} , class:"btn btn-danger" %></li>
+    <li><%= link_to venue.name, venue_path(venue) %><%= link_to "🗑️" , venue_path(venue),data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} , class:"btn btn-danger" %></li>
   <% end %>
 </ul>
 
