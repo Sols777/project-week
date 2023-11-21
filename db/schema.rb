@@ -45,11 +45,11 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_21_130016) do
   create_table "bookings", force: :cascade do |t|
     t.date "date"
     t.string "status", default: "pending"
-    t.bigint "users_id", null: false
+    t.bigint "user_id", null: false
     t.bigint "venue_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["users_id"], name: "index_bookings_on_users_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
     t.index ["venue_id"], name: "index_bookings_on_venue_id"
   end
 
@@ -75,14 +75,14 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_21_130016) do
     t.string "description"
     t.integer "capacity"
     t.boolean "status"
-    t.bigint "users_id"
+    t.bigint "user_id"
     t.integer "bustability"
-    t.index ["users_id"], name: "index_venues_on_users_id"
+    t.index ["user_id"], name: "index_venues_on_user_id"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "bookings", "users"
   add_foreign_key "bookings", "venues"
-  add_foreign_key "venues", "users", column: "users_id"
+  add_foreign_key "venues", "users"
 end
