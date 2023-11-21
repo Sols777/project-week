@@ -1,0 +1,23 @@
+<h1>Parties </h1>
+
+<h2>Pending Bookings</h2>
+<% @pending_bookings.each do |booking| %>
+  <%= booking.venue.name %>
+  <%= booking.date %>
+<% end %>
+
+<h2>My Maaa' Raves yabuddah 🕶️💃⛽🍾🍻🔫</h2>
+<% @accepted_bookings.each do |booking| %>
+  <%= booking.venue.name %>
+  <%= booking.date %>
+<% end %>
+
+<h2>Show Me Tha' Money 💲💲💰💰</h2>
+
+<% @bookings.each do |booking| %>
+ <% if booking.venue.user == current_user %>
+   <%= booking.user.first_name %>
+   <%= booking.venue.name %>
+   <%= booking.date %>
+  <% end %>
+<% end %>
