@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :set_venue, only:[:create_request]
+  before_action :set_venue, only: [:create_request]
 
   def index
     @renter_bookings = current_user.bookings.where(status: 'accepted')
@@ -15,7 +15,7 @@ class BookingsController < ApplicationController
   end
 
   def accept
-    @booking = Booking.find(params[:id]) 
+    @booking = Booking.find(params[:id])
     @booking.status = "accepted"
     @booking.save
     redirect_to bookings_path

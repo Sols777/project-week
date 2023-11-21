@@ -1,0 +1,26 @@
+<h1>Booking Request Details</h1>
+
+<p>
+  <strong>User:</strong>
+  <%= @booking_request.user.name %>
+</p>
+
+<p>
+  <strong>Venue:</strong>
+  <%= @booking_request.venue.name %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @booking_request.date %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @booking_request.status %>
+</p>
+
+<% if @booking_request.venue.user == current_user %>
+  <%= link_to "Approve Booking", approve_booking_path(@booking_request) %>
+  <%= link_to "Reject Booking", reject_booking_path(@booking_request) %>
+<% end %>

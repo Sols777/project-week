@@ -1,0 +1,14 @@
+<h2>My Maaa' Raves yabuddah 🕶️💃⛽🍾🍻🔫</h2>
+
+<% @renter_bookings.each do |booking| %>
+  <%= booking.venue.name %>
+  <%= booking.date %>
+<% end %>
+
+<h2>Show Me Tha' Money 💲💲💰💰</h2>
+
+<% @owner_bookings.each do |booking| %
+   <%= booking.user.name %>
+   <%= booking.venue.name %>
+   <%= booking.date %>
+<% end %>
