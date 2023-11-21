@@ -1,10 +1,12 @@
 class VenueController < ApplicationController
+  before_action :set_list, only: %i[show update destroy]
   def index
     @venues = Venue.all
   end
 
   def show
     @venue = Venue.find(params[:id])
+    @booking = Booking.new
   end
 
   def new
@@ -18,27 +20,25 @@ class VenueController < ApplicationController
   end
 
   def edit
-    @venue = Venue.find(params[:id])
   end
 
   def update
-    @venue = Venue.find(params[:id])
     @venue.update(venue_params)
     redirect_to venues_path(@venue)
   end
 
   def destroy
-    @venue = Venue.find(params[:id])
     @venue.destroy
     redirect_to venues_path, status: :see_other
   end
 
-    private
+  private
 
-    def article_params
-      params.require(:TODO).permit(:title, :TODO)
-    end
+  def venue_params
+    params.require(:venue).permit(:address, :name, :description, :capacity, :bustability)
   end
 
-
+  def set_list
+    @venue = Venue.find(params[:id])
+  end
 end
