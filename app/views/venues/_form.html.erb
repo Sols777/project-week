@@ -1,0 +1,9 @@
+<%= simple_form_for(@list) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :address %>
+  <%= f.input :description %>
+  <%= f.input :capacity %>
+  <%= f.input :bustability %>
+  <%= f.input :photo, as: :file %>
+  <%= f.submit "Add new venue", class: "btn btn-primary" %>
+<% end %>
