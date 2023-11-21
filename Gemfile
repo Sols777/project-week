@@ -14,6 +14,12 @@ gem "pg", "~> 1.1"
 # Autentication
 gem "devise"
 
+<<<<<<< Updated upstream
+=======
+# cloudinary
+gem "dotenv-rails"
+gem "cloudinary"
+>>>>>>> Stashed changes
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", ">= 5.0"
 
