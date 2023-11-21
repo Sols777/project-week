@@ -1,10 +1,16 @@
 class BookingsController < ApplicationController
-  before_action :set_venue, only: [:create_request]
+  before_action :set_venue, only: [:new, :create]
 
   def index
-    @renter_bookings = current_user.bookings.where(status: 'accepted')
+    @accepted_bookings = current_user.bookings.where(status: 'accepted')
+    @pending_bookings = current_user.bookings.where(status: 'pending')
     @owner_venues = current_user.venues
-    @owner_bookings = Booking.where(venue: @owner_venues, status: 'accepted')
+    @bookings = Booking.all
+    # @owner_bookings = Booking.where(venue: user == current_user)
+  end
+
+  def new
+    @booking = @venue.bookings.build
   end
 
   def show
@@ -28,13 +34,12 @@ class BookingsController < ApplicationController
     redirect_to bookings_path
   end
 
-  def create_request
+  def create
     @booking_request = current_user.bookings.new(booking_params)
     @booking_request.venue = @venue
-    @booking_request.status = "pending"
 
     if @booking_request.save
-      redirect_to @booking, notice: "Booking request created!"
+      redirect_to venues_path(@booking), notice: "Booking request created!"
       else
       render :new, status: :unprocessable_entity
     end
@@ -43,7 +48,7 @@ class BookingsController < ApplicationController
 private
 
   def set_venue
-    @venue = Venue.find(params[:id])
+    @venue = Venue.find(params[:venue_id])
   end
 
   def booking_params

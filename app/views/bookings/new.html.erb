@@ -1,0 +1,10 @@
+<h1>New Booking Request</h1>
+
+<%= simple_form_for [@venue, @booking] do |f| %>
+  <%= f.input :date %>
+
+  <%= f.input :user_id, as: :hidden, input_html: { value: current_user.id } %>
+  <%= f.input :venue_id, as: :hidden, input_html: { value: @venue.id } %>
+
+  <%= f.submit "Submit Booking Request", class:"btn btn-primary" %>
+<% end %>

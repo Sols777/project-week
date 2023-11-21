@@ -13,7 +13,7 @@ User.destroy_all
 user = User.create!(email: "test@example.com", password: "password", first_name: "Test", last_name: "User")
 
 # Create a test venue belonging to that user
-venue = Venue.create!(name: "Test Venue", users_id: user.id, address: "123 Test St", description: "This is a test venue", capacity: 100)
+venue = Venue.create!(name: "Test Venue", user_id: user.id, address: "123 Test St", description: "This is a test venue", capacity: 100, bustability: 85)
 
 # # Create an accepted test booking for demo data
 # booking = Booking.find_or_create_by!(venue: venue, user: user) do |booking|
