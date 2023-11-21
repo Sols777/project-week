@@ -123,14 +123,11 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
-<<<<<<< Updated upstream
-=======
     domain_name (0.6.20231109)
     dotenv (2.8.1)
     dotenv-rails (2.8.1)
       dotenv (= 2.8.1)
       railties (>= 3.2)
->>>>>>> Stashed changes
     drb (2.2.0)
       ruby2_keywords
     error_highlight (0.5.1)
@@ -308,6 +305,7 @@ DEPENDENCIES
   cloudinary
   debug
   devise
+  dotenv-rails
   error_highlight (>= 0.4.0)
   font-awesome-sass (~> 6.1)
   importmap-rails

@@ -3,7 +3,7 @@
 <p><%=@venue.description %></p>
 <p><%=@venue.capacity %></p>
 <p><%=@venue.bustability %></p>
-<img src= "<%= cloudinary_pic(@venue) %>" alt="Venue pic">
+<img src= "<%= cloudinary_pic(@venue) %>" alt="Venue pic" class="">
 <p></p>
 <%= link_to "Edit venue" , edit_venue_path , class:"btn btn-warning" %>
 <p></p>

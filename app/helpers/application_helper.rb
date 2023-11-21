@@ -5,5 +5,6 @@ module ApplicationHelper
     else
       image_path 'https://i0.wp.com/thinkfirstcommunication.com/wp-content/uploads/2022/05/placeholder-1-1.png?w=1200&ssl=1', height: 300, width: 400, crop: :fill
     end
+    # comment
   end
 end
