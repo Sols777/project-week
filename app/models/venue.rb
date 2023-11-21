@@ -1,12 +1,8 @@
 class Venue < ApplicationRecord
   belongs_to :users
   has_many :bookings, dependent: :destroy
-<<<<<<< Updated upstream
-  has_many :user, through: :bookings, dependent: :destroy
-=======
   has_many :users, through: :bookings, dependent: :destroy
   has_one_attached :photo
->>>>>>> Stashed changes
 
   validates :address, presence: true
   validates :name, presence: true
