@@ -1,4 +1,4 @@
-class VenueController < ApplicationController
+class VenuesController < ApplicationController
   before_action :set_list, only: %i[show update destroy]
   def index
     @venues = Venue.all
