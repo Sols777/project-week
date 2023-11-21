@@ -1,5 +1,5 @@
 class VenuesController < ApplicationController
-  before_action :set_list, only: %i[show update destroy]
+  before_action :set_venue, only: %i[show update edit destroy]
   def index
     @venues = Venue.all
   end
@@ -15,8 +15,13 @@ class VenuesController < ApplicationController
 
   def create
     @venue = Venue.new(venue_params)
-    @venue.save
-    redirect_to venue_path(@venue)
+    @venue.user = current_user
+    if @venue.save
+      redirect_to venue_path(@venue)
+    else
+      # @venues = Venue.all
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def edit
@@ -38,7 +43,7 @@ class VenuesController < ApplicationController
     params.require(:venue).permit(:address, :name, :description, :capacity, :bustability)
   end
 
-  def set_list
+  def set_venue
     @venue = Venue.find(params[:id])
   end
 end
