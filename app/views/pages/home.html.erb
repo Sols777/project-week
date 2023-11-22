@@ -14,17 +14,17 @@
     <div class="map">
       <iframe id="map-iframe" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d7128.665218391764!2d-8.693629477518764!3d41.181612954183905!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1spt-PT!2spt!4v1700571042816!5m2!1spt-PT!2spt" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
-  </div>
+</div>
 
 
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      document.getElementById('venue-search-form').addEventListener('submit', function(e) {
-        e.preventDefault();
-        var city = document.getElementById('city').value;
-        var mapFrame = document.getElementById('map-iframe');
-        mapFrame.src = 'https://www.google.com/maps/embed/v1/place?key=AIzaSyBJKvFuaby60fd5Wpzy1Mb09mE6N_5i2QE&q=' + encodeURIComponent(city);
-      });
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('venue-search-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      var city = document.getElementById('city').value;
+      var mapFrame = document.getElementById('map-iframe');
+      mapFrame.src = 'https://www.google.com/maps/embed/v1/place?key=AIzaSyBJKvFuaby60fd5Wpzy1Mb09mE6N_5i2QE&q=' + encodeURIComponent(city);
     });
-  </script>  
-  
+  });
+</script>
+<%# ///////// changes bellow for mapboxc %>
