@@ -9,7 +9,7 @@
     position: relative;
     transition: all 0.4s;
     overflow: hidden;
-  
+    
     &:hover {
       transform: scale(1.02);
     }
@@ -35,3 +35,14 @@
     transform: scale(0.9);
   }
   
+  .cardVenue{
+    a{
+      text-decoration: none;
+      color: white;
+    }
+  }
+
+  .card-info{
+    position: relative;
+    bottom: -293px;
+  }
