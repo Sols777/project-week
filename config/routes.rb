@@ -17,5 +17,4 @@ Rails.application.routes.draw do
   get "/bookings/:id/accept", to: "bookings#accept"
   patch "/bookings/:id/reject", to: "bookings#reject", as: "reject"
   get "/bookings/:id/reject", to: "bookings#reject"
-  get "/myvenues", to: "venues#myvenues"
 end
