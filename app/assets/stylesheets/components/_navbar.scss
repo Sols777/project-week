@@ -1,12 +1,24 @@
+@keyframes discoColors {
+  0% { background-color: #d67507; }
+  20% { background-color: #ff2f00; }
+  40% { background-color: #d2d215; }
+  60% { background-color: #03c303; }
+  80% { background-color: #2e62d3; }
+  100% { background-color: #4b0082; }
+}
+
+.navbar-lewagon {
+  animation: discoColors 2s infinite;
+}
+
 .navbar-lewagon {
   justify-content: space-between;
   background: #722913;
-}
-
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
-}
-
-.navbar-lewagon .navbar-brand img {
-  width: 35px;
+  .navbar-brand img {
+    margin-left: 15px;
+    width: 50px;
+  }
+  .navbar-collapse {
+    flex-grow: 0;
+  }
 }
