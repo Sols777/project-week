@@ -1,4 +1,4 @@
-.col {
+.cardStyle {
     background-size: cover;
     background-position: center;
     border-radius: 20px;
@@ -30,7 +30,7 @@
   }
   
   // If your cards are within a container, you may want to add:
-  .content:hover .col:not(:hover) {
+  .content:hover .cardStyle:not(:hover) {
     opacity: 0.5;
     transform: scale(0.9);
   }
