@@ -12,7 +12,9 @@ Rails.application.routes.draw do
   resources :venues do
     resources :bookings, only: [:new , :create, :show]
   end
-  resources :bookings, only: [:index]
+  resources :bookings, only: [:index, :show]
   patch "/bookings/:id/accept", to: "bookings#accept", as: "accept"
+  get "/bookings/:id/accept", to: "bookings#accept"
   patch "/bookings/:id/reject", to: "bookings#reject", as: "reject"
+  get "/bookings/:id/reject", to: "bookings#reject"
 end

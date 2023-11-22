@@ -14,6 +14,10 @@ gem "pg", "~> 1.1"
 # Autentication
 gem "devise"
 
+# Gepdcoder gem
+gem "geocoder"
+
+
 # cloudinary
 gem "cloudinary"
 # Use the Puma web server [https://github.com/puma/puma]

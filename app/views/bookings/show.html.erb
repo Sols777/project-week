@@ -2,7 +2,8 @@
 
 <p>
   <strong>User:</strong>
-  <%= @booking_request.user.name %>
+  <%= @booking_request.user.first_name %>
+  <%= @booking_request.user.last_name %>
 </p>
 
 <p>
@@ -21,6 +22,6 @@
 </p>
 
 <% if @booking_request.venue.user == current_user %>
-  <%= link_to "Approve Booking", approve_booking_path(@booking_request) %>
-  <%= link_to "Reject Booking", reject_booking_path(@booking_request) %>
+  <%= link_to "Approve Booking", accept_path(@booking_request) %>
+  <%= link_to "Reject Booking", reject_path(@booking_request) %>
 <% end %>
