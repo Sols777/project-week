@@ -8,11 +8,12 @@
   </thead>
 
   <tbody>
-    <% @bookings.each do |booking| %>
+    <% bookings.each do |booking| %>
       <% if booking.venue.user == current_user %>
         <tr>
           <td><%= booking.date %></td>
           <td><%= booking.user.first_name %></td>
+          <td><%= booking.status %></td>
           <td>
             <%= link_to "View", "/bookings/#{booking.id}" %>
             <%= link_to "Accept", accept_path(booking), data: {turbo_method: :patch} %>

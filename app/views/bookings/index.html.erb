@@ -6,16 +6,12 @@
   <%= booking.date %>
 <% end %>
 
-<h2>My Maaa' Raves yabuddah 🕶️💃⛽🍾🍻🔫</h2>
+<h2>Confirmed Parties</h2>
 <% @accepted_bookings.each do |booking| %>
   <%= booking.venue.name %>
   <%= booking.date %>
 <% end %>
 
-<h2>Show Me Tha' Money 💲💲💰💰</h2>
+<h2>Raves At My Venue</h2>
 
-<% @bookings.each do |booking| %>
-
-   <%= render 'actions', booking: booking %>
-
-<% end %>
+<%= render 'actions', bookings: @owner_bookings %>
