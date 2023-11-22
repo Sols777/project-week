@@ -24,14 +24,14 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
     @booking.status = "accepted"
     @booking.save
-    redirect_to bookings_path
+    redirect_to bookings_path, notice: "Lets Fuckin' Party Man!"
   end
 
   def reject
     @booking = Booking.find(params[:id])
     @booking.status = "rejected"
     @booking.save
-    redirect_to bookings_path
+    redirect_to bookings_path, notice: "Rave Rejected Asshole!"
   end
 
   def create

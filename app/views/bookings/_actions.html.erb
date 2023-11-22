@@ -1,0 +1,25 @@
+<table>
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Requested By</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @bookings.each do |booking| %>
+      <% if booking.venue.user == current_user %>
+        <tr>
+          <td><%= booking.date %></td>
+          <td><%= booking.user.first_name %></td>
+          <td>
+            <%= link_to "View", "/bookings/#{booking.id}" %>
+            <%= link_to "Accept", accept_path(booking), data: {turbo_method: :patch} %>
+            <%= link_to "Reject", reject_path(booking), data: {turbo_method: :patch} %>
+          </td>
+        </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>

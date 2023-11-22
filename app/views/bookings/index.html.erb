@@ -15,9 +15,7 @@
 <h2>Show Me Tha' Money 💲💲💰💰</h2>
 
 <% @bookings.each do |booking| %>
- <% if booking.venue.user == current_user %>
-   <%= booking.user.first_name %>
-   <%= booking.venue.name %>
-   <%= booking.date %>
-  <% end %>
+
+   <%= render 'actions', booking: booking %>
+
 <% end %>
