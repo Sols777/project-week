@@ -2,7 +2,7 @@
     <div class="container">
       <h1>Discover the best <strong>RAVES</strong></h1>
       <p>Ever wanted to party in a Coal Mine? Join members like Pete and party until the Secret Services shots us down.</p>
-      <%= link_to 'Get me in', '/venues/all', class: 'btn btn-flat my-btn' %>
+      <%= link_to 'Get me in', venues_path, class: 'btn btn-flat my-btn' %>
     </div>
     <div class="search-form">
       <%= form_with(url: '#', method: "get", id: "venue-search-form") do %>
