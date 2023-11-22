@@ -6,7 +6,7 @@ class BookingsController < ApplicationController
     @pending_bookings = current_user.bookings.where(status: 'pending')
     @owner_venues = current_user.venues
     @bookings = Booking.all
-    # @owner_bookings = Booking.where(venue: user == current_user)
+    @owner_bookings = Booking.select{ |booking| booking.venue.user == current_user && booking.status == "pending" }
   end
 
   def new
@@ -24,14 +24,14 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
     @booking.status = "accepted"
     @booking.save
-    redirect_to bookings_path
+    redirect_to bookings_path, notice: "woo.."
   end
 
   def reject
     @booking = Booking.find(params[:id])
     @booking.status = "rejected"
     @booking.save
-    redirect_to bookings_path
+    redirect_to bookings_path, notice: "nah.."
   end
 
   def create
