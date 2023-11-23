@@ -22,3 +22,14 @@
     flex-grow: 0;
   }
 }
+
+.remove-text-decor{
+  text-align: center;
+  a{
+    text-decoration: none;
+    color:rgb(231, 231, 231);
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+}

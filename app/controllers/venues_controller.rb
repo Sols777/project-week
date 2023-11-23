@@ -42,13 +42,17 @@ class VenuesController < ApplicationController
     redirect_to venues_path, status: :see_other
   end
 
+  def myvenues
+    @venues = Venue.where(user:current_user)
+  end
+
   private
 
   def venue_params
     params.require(:venue).permit(:address, :name, :description, :capacity, :bustability, :photo)
   end
 
-  def set_venue
+  def set_venue 
     @venue = Venue.find(params[:id])
   end
 end
