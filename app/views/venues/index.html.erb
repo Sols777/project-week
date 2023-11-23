@@ -1,8 +1,7 @@
 <h1>Venues</h1>
+<%= render "shared/search-box"%>
 <div class="container d-flex cardVenue">
-
-        <% @venues.each do |venue| %>
-          <div class="div"><%= render "shared/card", venue: venue %></div>
-        <% end %>
-
+  <% @venues.each do |venue| %>
+    <div class="div"><%= render "shared/card", venue: venue %></div>
+  <% end %>
 </div>

@@ -17,6 +17,9 @@ gem "devise"
 # Gepdcoder gem
 gem "geocoder"
 
+# searchbox
+gem "pg_search" 
+
 
 # cloudinary
 gem "cloudinary"
