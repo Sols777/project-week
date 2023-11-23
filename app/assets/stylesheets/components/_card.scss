@@ -3,12 +3,12 @@
     background-position: center;
     border-radius: 20px;
     box-shadow: 10px 10px 15px -15px rgba(0,0,0,0.62);
-    height: 350px;
-    width: 300px;
+    height: 300px;
+    width: 1000px;
     position: relative;
     transition: all 0.4s;
     overflow: hidden;
-    margin: 15px;
+    margin: 5px;
     
     &:hover {
       transform: scale(1.05);
@@ -27,21 +27,21 @@
       top: 10px;
       right: 10px;
     }
-  }
+}
   
-  .content:hover .cardStyle:not(:hover) {
-    opacity: 0.5;
-    transform: scale(0.9);
-  }
-  
-  .cardVenue{
-    a{
-      text-decoration: none;
-      color: white;
-    }
-  }
+.content:hover .cardStyle:not(:hover) {
+  opacity: 0.5;
+  transform: scale(0.9);
+}
 
-  .card-info{
-    position: relative;
-    bottom: -293px;
+.cardVenue{
+  a{
+    text-decoration: none;
+    color: white;
   }
+}
+
+.card-info{
+  position: relative;
+  bottom: -293px;
+}
