@@ -5,9 +5,7 @@
     <p><strong>Address:</strong> <%= @venue.address %></p>
     <p><strong>Capacity:</strong> <%= @venue.capacity %> people</p>
     <p><strong>Bustability:</strong> <%= @venue.bustability %> % chance of being busted</p>
-    <div class="map-container" data-controller="map" data-map-markers-value="<%= @markers.to_json %>" data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-      <!-- Map will be rendered here -->
-    </div>
+    <div class="map-container" data-controller="map" data-map-markers-value="<%= @markers.to_json %>" data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
     <%= link_to "Edit Venue", edit_venue_path(@venue), class: "btn btn-warning" %>
     <%= link_to "Back to Venues", venues_path, class: "btn btn-primary" %>
     <%= link_to "Delete", venue_path(@venue), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-danger" %>

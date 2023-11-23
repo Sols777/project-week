@@ -2,26 +2,14 @@
     <div class="container">
       <h1>Discover the best <strong>RAVES</strong></h1>
       <p>Ever wanted to party in a Coal Mine? Join members like Pete and party until the Secret Services shots us down.</p>
-      <%= link_to 'Get me in', '#', class: 'btn btn-flat my-btn' %>
-    </div>
-    <div class="search-form">
-      <%= form_with(url: '#', method: "get", id: "venue-search-form") do %>
-        <%= select_tag :city, options_for_select(['Porto', 'London', 'Wales']), id: 'city', prompt: 'Select a city' %>
-        <%= number_field_tag :people, nil, id: 'people', placeholder: "Number of People" %>
-        <%= submit_tag "Search" %>
-      <% end %>
-    </div>
-    <div class="map">
-      <iframe id="map-iframe" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d7128.665218391764!2d-8.693629477518764!3d41.181612954183905!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1spt-PT!2spt!4v1700571042816!5m2!1spt-PT!2spt" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-    </div>
+      <%= link_to 'Get me in',venues_path, class: 'btn btn-danger' %>
 </div>
-
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    document.getElementById('venue-search-form').addEventListener('submit', function(e) {
-      e.preventDefault();
-      var city = document.getElementById('city').value;
-      var mapFrame = document.getElementById('map-iframe');
-      mapFrame.src = 'https://www.google.com/maps/embed/v1/place?key=AIzaSyBJKvFuaby60fd5Wpzy1Mb09mE6N_5i2QE&q=' + encodeURIComponent(city);
-    });
-  </script>  
+</div>
+<div class="container d-flex">
+  <div class="map-container home-map" data-controller="map" data-map-markers-value="<%= @markers.to_json %>" data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+  <div class="container cardVenue">
+    <% @venues.each do |venue| %>
+      <div class="div"><%= render "card_home", venue: venue %></div>
+    <% end %>
+  </div>
+</div>

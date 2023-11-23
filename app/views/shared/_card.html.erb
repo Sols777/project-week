@@ -1,8 +1,10 @@
-<div class="cardStyle"style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cloudinary_pic(venue)%>')">
-    <div class="d-flex card-info">
-      <%= link_to venue.name, venue_path(venue) %>
-      <% if venue.user == current_user %>
-        <%= link_to "🗑️" , venue_path(venue),data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} , class:"btn btn-danger" %>
-      <% end %>
-    </div>
- </div>
+<%= link_to venue_path(venue), class: "button" do %>
+  <div class="cardStyle"style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cloudinary_pic(venue)%>')">
+      <div class="d-flex card-info">
+        <p><%= venue.name %></p>
+        <% if venue.user == current_user %>
+          <%= link_to "🗑️" ,venue_path(venue),data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} , class:"btn btn-danger" %>
+        <% end %>
+      </div>
+  </div>
+<% end %>
