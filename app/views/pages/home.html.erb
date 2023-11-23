@@ -5,6 +5,7 @@
       <%= link_to 'Get me in',venues_path, class: 'btn btn-danger' %>
 </div>
 </div>
+<%= render "shared/search-box"%>
 <div class="container d-flex">
   <div class="map-container home-map" data-controller="map" data-map-markers-value="<%= @markers.to_json %>" data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
   <div class="container cardVenue">

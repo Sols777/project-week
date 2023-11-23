@@ -2,7 +2,10 @@ class VenuesController < ApplicationController
   before_action :set_venue, only: %i[show update edit destroy]
   def index
     @venues = Venue.all
-  end
+    if params[:query].present?
+      @venues = Venue.search_venues(params[:query])
+    end
+  end 
 
   def show
     @venue = Venue.find(params[:id])
@@ -52,7 +55,7 @@ class VenuesController < ApplicationController
     params.require(:venue).permit(:address, :name, :description, :capacity, :bustability, :photo)
   end
 
-  def set_venue 
+  def set_venue
     @venue = Venue.find(params[:id])
   end
 end
