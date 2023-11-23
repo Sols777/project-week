@@ -52,6 +52,6 @@ private
   end
 
   def booking_params
-    params.require(:booking).permit(:date, :user_id, :venue_id)
+    params.require(:booking).permit(:start_date, :end_date, :venue_id, :user_id)
   end
 end
