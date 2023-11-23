@@ -5,13 +5,13 @@
     box-shadow: 10px 10px 15px -15px rgba(0,0,0,0.62);
     height: 350px;
     width: 300px;
-    margin: 10px;
     position: relative;
     transition: all 0.4s;
     overflow: hidden;
+    margin: 15px;
     
     &:hover {
-      transform: scale(1.02);
+      transform: scale(1.05);
     }
   
     li {
@@ -29,7 +29,6 @@
     }
   }
   
-  // If your cards are within a container, you may want to add:
   .content:hover .cardStyle:not(:hover) {
     opacity: 0.5;
     transform: scale(0.9);

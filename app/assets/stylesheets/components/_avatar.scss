@@ -1,20 +1,38 @@
+@keyframes discoColors {
+  0% { border-color: #ff0000; }
+  20% { border-color: #ffa500; }
+  40% { border-color: #ffff00; }
+  60% { border-color: #008000; }
+  80% { border-color: #0000ff; }
+  100% { border-color: #4b0082; }
+}
+
 .avatar {
   width: 40px;
   border-radius: 50%;
+  &:hover {
+    animation: discoColors 1s infinite;
+    border: 2px solid transparent;
+    transform: scale(1.10);
+  }
 }
+
 .avatar-large {
   width: 56px;
   border-radius: 50%;
 }
+
 .avatar-bordered {
   width: 40px;
   border-radius: 50%;
   box-shadow: 0 1px 2px rgba(0,0,0,0.2);
   border: white 1px solid;
 }
+
 .avatar-square {
   width: 40px;
   border-radius: 0px;
   box-shadow: 0 1px 2px rgba(0,0,0,0.2);
   border: white 1px solid;
 }
+
