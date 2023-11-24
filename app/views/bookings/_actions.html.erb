@@ -11,7 +11,7 @@
     <% bookings.each do |booking| %>
       <% if booking.venue.user == current_user %>
         <tr>
-          <td><%= booking.date %></td>
+          <td><%= booking.start_date %> to <%= booking.end_date %></td>
           <td><%= booking.user.first_name %></td>
           <td><%= booking.status %></td>
           <td>

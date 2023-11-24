@@ -1,17 +1,19 @@
-<h1>My bookings</h1>
-
-<h2>Pending Bookings</h2>
+<h1>My Bookings Dashboard </h1>
+<br>
+<h2>My Pending Bookings ⏰⏰👍✅❓❓👎⛔🤷‍♀️🤷‍♂️ </h2>
 <% @pending_bookings.each do |booking| %>
   <%= booking.venue.name %>
-  <%= booking.date %>
+  <%= booking.start_date %> to <%= booking.end_date %>
 <% end %>
-
-<h2>Confirmed Parties</h2>
+<br>
+<h2>Confirmed Bookings 💃🕶️🎊🔫🍻👯🍾💉⛽😮‍💨🥴🪩😵🥳🪅</h2>
 <% @accepted_bookings.each do |booking| %>
   <%= booking.venue.name %>
-  <%= booking.date %>
+  <%= booking.start_date %> to <%= booking.end_date %>
 <% end %>
-
-<h2>Raves At My Venue</h2>
+<br>
+<br>
+<br>
+<h1>My Venue Rentals 🛖🏯🏰⛳🏗️🏦🏭🏛️</h1>
 
 <%= render 'actions', bookings: @owner_bookings %>
