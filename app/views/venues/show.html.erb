@@ -1,13 +1,43 @@
 <div class="container venue-details">
-    <h2><%= @venue.name %></h2>
-    <img src="<%= cloudinary_pic(@venue) %>" alt="Venue picture" class="venue-image">
-    <p><%= @venue.description %></p>
-    <p><strong>Address:</strong> <%= @venue.address %></p>
-    <p><strong>Capacity:</strong> <%= @venue.capacity %> people</p>
-    <p><strong>Bustability:</strong> <%= render "bustability", filled_hands: @filled_hands %>
-    <div class="map-container" data-controller="map" data-map-markers-value="<%= @markers.to_json %>" data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
-    <%= link_to "Edit Venue", edit_venue_path(@venue), class: "btn btn-warning" %>
-    <%= link_to "Back to Venues", venues_path, class: "btn btn-primary" %>
-    <%= link_to "Delete", venue_path(@venue), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-danger" %>
-    <%= link_to "Book This Place", new_venue_booking_path(@venue), class: "btn btn-success" %>
+  <div class="photo-container">
+      <h2><strong><%= @venue.name %></strong></h2>
+      <img src="<%= cloudinary_pic(@venue) %>" alt="Venue picture" class="venue-image">
+      <%# buttons under pic%>
+      <% if current_user  %>
+        <div class="d-flex justify-content-center">
+          <%= link_to "Edit this Venue", edit_venue_path(@venue), class: "btn btn-ghost-show-edit m-3" %>
+          <%= link_to "Delete this venue", venue_path(@venue), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-ghost-show-delete m-3" %>
+        </div>
+      <% end %>
+  </div>
+  <div class="details-container">
+    <div class="description-container">
+      <%# description %>
+      <h3><strong>Venues Details:</strong></h3>
+      <p><strong>Description: </strong><%= @venue.description %></h3>
+      <p><strong>Address: </strong> <%= @venue.address %></p>
+      <p><strong>Capacity: </strong> <%= @venue.capacity %> people</p>
+      <p><%= render "bustability", filled_hands: @filled_hands %></p>
+    </div>
+    <!-- Booking form-->
+    <div class="booking-container">
+      <h3><strong>Make a booking:</strong></h2>
+      <%= simple_form_for [@venue, @booking] do |f| %>
+      <%= f.input :start_date,
+        as: :string,
+        input_html: {data: {controller: "datepicker", action: "input->datepicker#connect"}}
+      %>
+      <%= f.input :end_date,
+        as: :string,
+        input_html: {data: {controller: "datepicker", action: "input->datepicker#connect"}}
+      %>
+      <%= f.input :user_id, as: :hidden, input_html: { value: current_user.id } %>
+      <%= f.input :venue_id, as: :hidden, input_html: { value: @venue.id } %>
+
+      <%= f.submit "Book it", class:"btn btn-ghost-show-book" %>
+    <% end %>
+    </div>
+  </div>
+    <!-- Map  -->
+    <div class="map-show" data-controller="map" data-map-markers-value="<%= @markers.to_json %>" data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
 </div>

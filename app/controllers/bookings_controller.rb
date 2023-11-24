@@ -37,11 +37,10 @@ class BookingsController < ApplicationController
   def create
     @booking_request = current_user.bookings.new(booking_params)
     @booking_request.venue = @venue
-
     if @booking_request.save
-      redirect_to venues_path(@booking), notice: "Booking request created!"
+      redirect_to venues_path(@venue), notice: "Booking request created!"
       else
-      render :new, status: :unprocessable_entity
+      render 'venues/show', status: :unprocessable_entity
     end
   end
 
