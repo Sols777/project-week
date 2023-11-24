@@ -4,7 +4,7 @@
     <p><%= @venue.description %></p>
     <p><strong>Address:</strong> <%= @venue.address %></p>
     <p><strong>Capacity:</strong> <%= @venue.capacity %> people</p>
-    <p><strong>Bustability:</strong> <%= render "bustability", filled_hands: @filled_hands, empty_hands: @empty_hands %>
+    <p><strong>Bustability:</strong> <%= render "bustability", filled_hands: @filled_hands %>
     <div class="map-container" data-controller="map" data-map-markers-value="<%= @markers.to_json %>" data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
     <%= link_to "Edit Venue", edit_venue_path(@venue), class: "btn btn-warning" %>
     <%= link_to "Back to Venues", venues_path, class: "btn btn-primary" %>
