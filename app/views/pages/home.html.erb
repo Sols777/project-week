@@ -4,12 +4,15 @@
     <p>Ever wanted to party in a Coal Mine? Join members like Pete and party until the Secret Services shots us down.</p>
   </div>
   <%= render "shared/search-box"%>
-  <div class="container d-flex">
+</div>
+<div class="container">
+  <h2>Check all venues locations here!</h2>
+  <div class="d-flex justify-content-center">
     <div class="map-container home-map" data-controller="map" data-map-markers-value="<%= @markers.to_json %>" data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
-  </div>
-  <div class="container cardVenue">
+  <div class="">
     <% @venues.each do |venue| %>
-      <div class="div"><%= render "card_home", venue: venue %></div>
+      <div><%= render "card_home", venue: venue %></div>
     <% end %>
+  </div>
   </div>
 </div>
