@@ -5,14 +5,14 @@
   background: #fff;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  display: flex;/* Use flexbox */
-  justify-content: space-around; /* Space out the child elements */
+  display: flex;
+  justify-content: space-between;
   flex-wrap: wrap; /* Allow items to wrap as needed */
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   text-shadow: 0 4px 6px rgba(0,0,0,0.1);
 
   h2 {
-      width: 100%; /* Full width */
+      width: 100%;
       font-size: 2.5em;
       margin-bottom: 0.5em;
       text-align: center;
@@ -20,8 +20,8 @@
   }
 
   .photo-container, .details-container {
-      flex-basis: 48%; /* Adjust this value as needed */
-      height: auto; /* Or set a fixed height */
+      flex-basis: 48%;
+      height: auto;
   }
 
   img {
@@ -32,7 +32,7 @@
   }
 
   .map-container {
-      width: 100%; /* Takes the full width of the parent .details-container */
+      width: 100%;
       height: 300px;
       margin-bottom: 15px;
   }

@@ -1,14 +1,14 @@
-<div>
-  <h1>Venues</h1>
-  <%= render "shared/search-box"%>
-</div>
-<div class=" venues-page-container d-flex">
-  <%# <div class=""> %>
-    <div class="map-container" data-controller="map" data-map-markers-value="<%= @markers.to_json %> " data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
-  <%# </div> %>
-  <div class="card-container d-flex">
+<div class="venues-page-container">
+  <div class="card-container">
     <% @venues.each do |venue| %>
-        <%= render "shared/card", venue: venue %>
+      <%= render "shared/card", venue: venue %>
     <% end %>
+  </div>
+  <div class="map-box">
+    <div class="fixed-map" data-controller="map" 
+         data-map-markers-value="<%= @markers.to_json %>" 
+         data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+      <!-- Map will be rendered here -->
+    </div>
   </div>
 </div>

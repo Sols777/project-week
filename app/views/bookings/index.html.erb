@@ -1,19 +1,38 @@
 <h1>My Bookings Dashboard </h1>
 <br>
-<h2>My Pending Bookings ⏰⏰👍✅❓❓👎⛔🤷‍♀️🤷‍♂️ </h2>
-<% @pending_bookings.each do |booking| %>
-  <%= booking.venue.name %>
-  <%= booking.start_date %> to <%= booking.end_date %>
-<% end %>
-<br>
-<h2>Confirmed Bookings 💃🕶️🎊🔫🍻👯🍾💉⛽😮‍💨🥴🪩😵🥳🪅</h2>
-<% @accepted_bookings.each do |booking| %>
-  <%= booking.venue.name %>
-  <%= booking.start_date %> to <%= booking.end_date %>
-<% end %>
-<br>
-<br>
-<br>
-<h1>My Venue Rentals 🛖🏯🏰⛳🏗️🏦🏭🏛️</h1>
+<div class="container-collapse" data-controller="collapsible">
 
-<%= render 'actions', bookings: @owner_bookings %>
+  <div class="left">
+
+    <div class="collapsible">
+      <h2>My Venue Rentals</h2>
+      <div class="content">
+        <%= render 'actions', bookings: @owner_bookings %>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="right">
+    <div class="collapsible">
+  
+      <h2>My Pending Bookings</h2>
+      <div class="content">
+        <% @pending_bookings.each do |booking| %>
+          <%= render 'booking_card', booking: booking %>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="collapsible">
+      <h2>Confirmed Bookings</h2>
+      <div class="content">
+        <% @accepted_bookings.each do |booking| %>
+          <%= render 'booking_card', booking: booking %>
+        <% end %>
+      </div>
+    </div>
+
+  </div>
+
+</div>
