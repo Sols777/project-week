@@ -54,11 +54,16 @@
 
 .card-product {
   overflow: hidden;
-  height: 120px;
+  height: 150px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
+  background: linear-gradient(to right, #D0410D, #6C2910);
+  margin-bottom: 8px;
+  border: black;
+  border-radius: 12px;
+  padding: 8px;
 }
 
 .card-product img {
@@ -71,6 +76,7 @@
   font-size: 16px;
   font-weight: bold;
   margin: 0;
+  font-weight: bold;
 }
 
 .card-product p {
@@ -79,8 +85,23 @@
   opacity: .7;
   margin-bottom: 0;
   margin-top: 8px;
+  font-weight: bold;
 }
 
 .card-product .card-product-infos {
-  padding: 16px;
+  padding: 24px;
+}
+
+.card-home a{
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+
+.info-card{
+  background: linear-gradient(to right, #D0410D, #6C2910);
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: white;
+  text-decoration: none;
 }

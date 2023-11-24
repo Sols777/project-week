@@ -5,14 +5,17 @@
   </div>
   <%= render "shared/search-box"%>
 </div>
-<div class="container d-flex">
+<h2 id="h2-home">Check all venues locations here!</h2>
+<div class="home-container d-flex">
   <h2>Check all venues locations here!</h2>
   <div class="d-flex justify-content-center">
     <div class="home-map" data-controller="map" data-map-markers-value="<%= @markers.to_json %>" data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
   <div class="">
+    <div class="home-map" data-controller="map" data-map-markers-value="<%= @markers.to_json %>" data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+  </div>
+  <div class="card-home">
     <% @venues.each do |venue| %>
       <div><%= render "card_home", venue: venue %></div>
     <% end %>
-  </div>
   </div>
 </div>
