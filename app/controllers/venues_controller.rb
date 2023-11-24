@@ -5,6 +5,14 @@ class VenuesController < ApplicationController
     if params[:query].present?
       @venues = Venue.search_venues(params[:query])
     end
+    @markers = @venues.geocoded.map do |venue|
+      {
+        lat: venue.latitude,
+        lng: venue.longitude,
+        info_window_html: render_to_string(partial: "info_window", locals: {venue: venue}),
+        marker_html: render_to_string(partial: "marker")
+      }
+    end
   end
 
   def show

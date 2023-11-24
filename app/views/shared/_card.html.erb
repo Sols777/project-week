@@ -1,7 +1,7 @@
-<%= link_to venue_path(venue), class: "button" do %>
-  <div class="cardStyle"style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cloudinary_pic(venue)%>')">
-    <div class="d-flex card-info">
-      <p><%= venue.name %></p>
+<div class="card-link">
+  <%= link_to venue_path(venue), class: "button" do %>
+    <div class="cardStyle cardVenue card-info"style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cloudinary_pic(venue)%>')">
+        <p><%= venue.name %></p>
     </div>
-  </div>
-<% end %>
+  <% end %>
+</div>

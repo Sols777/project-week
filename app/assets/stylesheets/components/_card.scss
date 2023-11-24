@@ -1,10 +1,11 @@
+// venues and myvenues page card style
 .cardStyle {
     background-size: cover;
     background-position: center;
     border-radius: 20px;
     box-shadow: 10px 10px 15px -15px rgba(0,0,0,0.62);
     height: 300px;
-    width: 1000px;
+    width: 300px;
     position: relative;
     transition: all 0.4s;
     overflow: hidden;
@@ -35,8 +36,7 @@
 }
 
 .cardVenue{
-  flex-wrap: wrap;
-  width: 100%;
+  width: 250px;
   padding: 0px 50px;
   justify-content: center;
   a{
@@ -45,11 +45,15 @@
   }
 }
 
-.card-info{
-  position: relative;
-  bottom: -293px;
+.card-link{
+  a{
+    text-decoration: none;
+    color: white;
+  }
 }
 
+
+// home page card style bellow
 .card-product {
   overflow: hidden;
   height: 120px;
