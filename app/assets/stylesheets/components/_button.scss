@@ -6,7 +6,7 @@
     font-weight: lighter;
     transition: opacity 0.3s ease;
   }
-  
+
   .btn-ghost:hover {
     opacity: 1;
   }
@@ -19,7 +19,56 @@
     font-weight: lighter;
     transition: opacity 0.3s ease;
   }
-  
+
   .btn-ghost-home:hover {
     opacity: 1;
+  }
+
+
+  .btn-ghost-show-book {
+    color: #0db9d0;
+    border: 1px solid #0db9d0;
+    padding: 8px 24px;
+    border-radius: 50px;
+    font-weight: lighter;
+    transition: opacity 0.3s ease;
+    align-items: center;
+    width: 90%;
+  }
+  .btn-ghost-show-book:hover {
+    opacity: 0.1;
+    font-weight: bold;
+    scale: 1.5;
+  }
+
+
+  .btn-ghost-show-edit {
+    color: #d0a90d;
+    border: 1px solid #d08c0d;
+    padding: 8px 24px;
+    border-radius: 50px;
+    font-weight: lighter;
+    transition: opacity 0.3s ease;
+    align-items: center;
+  }
+  .btn-ghost-show-edit:hover {
+    opacity: 0.1;
+    font-weight: bold;
+    scale: 1.5;
+  }
+
+
+  .btn-ghost-show-delete{
+    color: #d00d0df1;
+    border: 1px solid rgb(255, 0, 0);
+    padding: 8px 24px;
+    border-radius: 50px;
+    font-weight: lighter;
+    transition: opacity 0.3s ease;
+    align-items: center;
+  }
+  .btn-ghost-show-delete:hover {
+    opacity: 0.1;
+    font-weight: bold;
+    scale: 1.5;
   }
