@@ -1,24 +1,24 @@
 .venue-details {
-  max-width: 1200px; /* Adjusted for wider layout */
+  max-width: 1200px;
   margin: 40px auto;
   padding: 20px;
   background: #fff;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  display: flex; /* Use flexbox */
-  justify-content: space-between; /* Space out the child elements */
-  flex-wrap: wrap; /* Allow items to wrap as needed */
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
 
   h2 {
-      width: 100%; /* Full width */
+      width: 100%;
       font-size: 2.5em;
       margin-bottom: 0.5em;
       text-align: center;
   }
 
   .photo-container, .details-container {
-      flex-basis: 48%; /* Adjust this value as needed */
-      height: auto; /* Or set a fixed height */
+      flex-basis: 48%;
+      height: auto;
   }
 
   img {
@@ -28,14 +28,14 @@
   }
 
   .map-container {
-      width: 100%; /* Takes the full width of the parent .details-container */
+      width: 100%;
       height: 300px;
       margin-bottom: 20px;
   }
 
   .btn {
       display: block;
-      width: auto; /* Adjust this to not be full width of the container */
+      width: auto;
       margin-bottom: 10px;
   }
 }
