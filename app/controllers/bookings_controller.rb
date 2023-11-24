@@ -6,7 +6,7 @@ class BookingsController < ApplicationController
     @pending_bookings = current_user.bookings.where(status: 'pending')
     @owner_venues = current_user.venues
     @bookings = Booking.all
-    @owner_bookings = Booking.select{ |booking| booking.venue.user == current_user && booking.status == "pending" }
+    @owner_bookings = Booking.select{ |booking| booking.venue.user == current_user }
   end
 
   def new

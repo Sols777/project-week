@@ -1,6 +1,6 @@
 <h1>My Bookings Dashboard </h1>
 <br>
-<div class="container">
+<div class="container-collapse" data-controller="collapsible">
 
   <div class="left">
 
@@ -14,8 +14,8 @@
   </div>
 
   <div class="right">
-
     <div class="collapsible">
+  
       <h2>My Pending Bookings</h2>
       <div class="content">
         <% @pending_bookings.each do |booking| %>

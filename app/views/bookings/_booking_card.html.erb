@@ -3,7 +3,7 @@
   <% if booking.venue.photo.attached? %>
     <img src="<%= cl_image_path booking.venue.photo.key %>" />
   <% else %>
-    <img src="placeholder-image.jpg">
+    <%= image_tag "/placeholder-image.jpg" %>
   <% end %>
 
   <div class="card-product-infos">
