@@ -1,12 +1,24 @@
 <div class="row justify-content-center">
   <div class="col-sm-8 my-3 search-box">
-    <%= form_with url: venues_path, method: :get, class: "d-flex" do %>
-      <%= text_field_tag :query,
-            params[:query],
-            class: "form-control",
-            placeholder: "Search venues"
+    <% if params[:controller] == "pages" && params[:action] == "home" %>
+      <%= form_with url: venues_path, method: :get, class: "d-flex" do %>
+        <%= text_field_tag :query,
+        params[:query],
+        class: "form-control search-input-home", 
+        placeholder: "Search venues"
         %>
-      <%= submit_tag "Search", name: "", class: "btn btn-ghost" %>
+          <%= submit_tag "Search", name: "", class: "btn btn-ghost-home" %>
+      <% end %>
+    <% else %>
+      <%= form_with url: venues_path, method: :get, class: "d-flex" do %>
+        <%= text_field_tag :query,
+        params[:query],
+        class: "form-control search-input", 
+        placeholder: "Search venues"
+        %>
+        <%= submit_tag "Search", name: "", class: "btn btn-ghost" %>
+      <% end %>
     <% end %>
   </div>
 </div>
+  

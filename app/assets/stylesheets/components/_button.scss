@@ -1,5 +1,5 @@
 .btn-ghost {
-    color: #FFFFFF;
+    color: #D0410D;
     border: 1px solid #D0410D;
     padding: 8px 24px;
     border-radius: 50px;
@@ -8,5 +8,18 @@
   }
   
   .btn-ghost:hover {
+    opacity: 1;
+  }
+
+  .btn-ghost-home {
+    color: #FFFF;
+    border: 1px solid #FFFF;
+    padding: 8px 24px;
+    border-radius: 50px;
+    font-weight: lighter;
+    transition: opacity 0.3s ease;
+  }
+  
+  .btn-ghost-home:hover {
     opacity: 1;
   }

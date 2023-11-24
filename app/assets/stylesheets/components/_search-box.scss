@@ -1,7 +1,17 @@
-.search-box{
-  max-width: none;
-  width: 100%;
-  border: 1px solid lightgrey;
-  box-shadow: none;
-  background-color: transparent;
+// .search-box-home {
+//   max-width: none;
+//   width: 100%;
+//   border: 1px solid lightgrey;
+//   box-shadow: none;
+//   background-color: transparent;
+// }
+
+.search-input {
+  border-color: #D0410D;
+  margin-right: 15px;
+}
+
+.search-input-home {
+  border-color: #ffffff;
+  margin-right: 15px;
 }

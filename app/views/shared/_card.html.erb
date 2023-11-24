@@ -5,7 +5,3 @@
     </div>
   </div>
 <% end %>
-
-<% if venue.user == current_user %>
-  <%= link_to "🗑️", venue_path(venue), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} , class:"btn btn-danger" %>
-<% end %>
