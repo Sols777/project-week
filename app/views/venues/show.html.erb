@@ -1,13 +1,23 @@
 <div class="container venue-details">
-    <h2><%= @venue.name %></h2>
-    <img src="<%= cloudinary_pic(@venue) %>" alt="Venue picture" class="venue-image">
-    <p><%= @venue.description %></p>
-    <p><strong>Address:</strong> <%= @venue.address %></p>
-    <p><strong>Capacity:</strong> <%= @venue.capacity %> people</p>
-    <p><strong>Bustability:</strong> <%= render "bustability", filled_hands: @filled_hands %>
-    <div class="map-container" data-controller="map" data-map-markers-value="<%= @markers.to_json %>" data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
-    <%= link_to "Edit Venue", edit_venue_path(@venue), class: "btn btn-warning" %>
-    <%= link_to "Back to Venues", venues_path, class: "btn btn-primary" %>
-    <%= link_to "Delete", venue_path(@venue), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-danger" %>
-    <%= link_to "Book This Place", new_venue_booking_path(@venue), class: "btn btn-success" %>
+    <div class="photo-container">
+        <h2><%= @venue.name %></h2>
+        <img src="<%= cloudinary_pic(@venue) %>" alt="Venue picture" class="venue-image">
+    </div>
+    
+    <div class="details-container">
+        <div class="booking-container">
+            <p><%= @venue.description %></p>
+            <p><strong>Address:</strong> <%= @venue.address %></p>
+            <p><strong>Capacity:</strong> <%= @venue.capacity %> people</p>
+            <p><strong>Bustability:</strong> <%= render "bustability", filled_hands: @filled_hands %></p>
+            <!-- Booking and interaction buttons -->
+            <%= link_to "Edit Venue", edit_venue_path(@venue), class: "btn btn-warning" %>
+            <%= link_to "Back to Venues", venues_path, class: "btn btn-primary" %>
+            <%= link_to "Delete", venue_path(@venue), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-danger" %>
+            <%= link_to "Book This Place", new_venue_booking_path(@venue), class: "btn btn-success" %>
+        </div>
+        <div class="map-container" data-controller="map" data-map-markers-value="<%= @markers.to_json %>" data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+            <!-- Map will be rendered here -->
+        </div>
+    </div>
 </div>
