@@ -18,8 +18,9 @@ gem "devise"
 gem "geocoder"
 
 # searchbox
-gem "pg_search" 
+gem "pg_search"
 
+gem "dotenv-rails"
 
 # cloudinary
 gem "cloudinary"

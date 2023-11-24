@@ -1,0 +1,16 @@
+<div class="card-product">
+
+  <% if booking.venue.photo.attached? %>
+    <img src="<%= cl_image_path booking.venue.photo.key %>" />
+  <% else %>
+    <img src="placeholder-image.jpg">
+  <% end %>
+
+  <div class="card-product-infos">
+    <h2><%= booking.venue.name %></h2>
+    <p>
+      <%= booking.start_date %> to <%= booking.end_date %>
+    </p>
+  </div>
+
+</div>
