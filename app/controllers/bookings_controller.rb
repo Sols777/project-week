@@ -6,7 +6,7 @@ class BookingsController < ApplicationController
     @pending_bookings = current_user.bookings.where(status: 'pending')
     @owner_venues = current_user.venues
     @bookings = Booking.all
-    @owner_bookings = Booking.select{ |booking| booking.venue.user == current_user && booking.status == "pending" }
+    @owner_bookings = Booking.select{ |booking| booking.venue.user == current_user }
   end
 
   def new
@@ -37,11 +37,10 @@ class BookingsController < ApplicationController
   def create
     @booking_request = current_user.bookings.new(booking_params)
     @booking_request.venue = @venue
-
     if @booking_request.save
-      redirect_to venues_path(@booking), notice: "Booking request created!"
+      redirect_to venues_path(@venue), notice: "Booking request created!"
       else
-      render :new, status: :unprocessable_entity
+      render 'venues/show', status: :unprocessable_entity
     end
   end
 

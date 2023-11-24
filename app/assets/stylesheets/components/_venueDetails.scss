@@ -1,5 +1,5 @@
 .venue-details {
-  max-width: 1200px;
+  max-width: 90%; /* Adjusted for wider layout */
   margin: 40px auto;
   padding: 20px;
   background: #fff;
@@ -7,13 +7,16 @@
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
   display: flex;
   justify-content: space-between;
-  flex-wrap: wrap;
+  flex-wrap: wrap; /* Allow items to wrap as needed */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-shadow: 0 4px 6px rgba(0,0,0,0.1);
 
   h2 {
       width: 100%;
       font-size: 2.5em;
       margin-bottom: 0.5em;
       text-align: center;
+      font-family: 'Audiowide', sans-serif;
   }
 
   .photo-container, .details-container {
@@ -23,19 +26,21 @@
 
   img {
       width: 100%;
-      border-radius: 8px;
+      border-radius: 12px;
       margin-bottom: 20px;
+      box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px;
   }
 
   .map-container {
       width: 100%;
       height: 300px;
-      margin-bottom: 20px;
+      margin-bottom: 15px;
   }
 
   .btn {
       display: block;
-      width: auto;
+      width: 30%;
+      justify-content: center; /* Adjust this to not be full width of the container */
       margin-bottom: 10px;
   }
 }
