@@ -1,12 +1,12 @@
 <%= link_to venue_path(venue), class: "button" do %>
-  <div class="">
-      <div class="card-info">
-        <img src="<%= cloudinary_pic(venue) %>" alt="Venue picture" class="venue-image">
-        <%= link_to venue.name, venue_path(venue) %>
-        <%= link_to venue.address, venue_path(venue) %>
-        <%= link_to venue.description, venue_path(venue) %>
-        <%= link_to venue.capacity, venue_path(venue) %>
-        <%= link_to venue.bustability, venue_path(venue) %>
+  <div class="card-product">
+      <img src="<%= cloudinary_pic(venue) %>" alt="Venue picture" class="venue-image">
+      <div class="card-product-infos">
+        <p>Venue: <%= link_to venue.name, venue_path(venue) %></p>
+        <p>Address: <%= link_to venue.address, venue_path(venue) %></p>
+        <p> Details: <%= link_to venue.description, venue_path(venue) %></p>
+        <p>Max capacity: <%= link_to venue.capacity, venue_path(venue) %></p>
+        <p> Bustability: <%= link_to venue.bustability, venue_path(venue) %></p>
       </div>
   </div>
 <% end %>

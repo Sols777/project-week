@@ -9,11 +9,11 @@
     transition: all 0.4s;
     overflow: hidden;
     margin: 5px;
-    
+
     &:hover {
       transform: scale(1.05);
     }
-  
+
     li {
       list-style: none;
       position: absolute;
@@ -21,20 +21,24 @@
       left: 10px;
       color: white;
     }
-  
+
     .btn-danger {
       position: absolute;
       top: 10px;
       right: 10px;
     }
 }
-  
+
 .content:hover .cardStyle:not(:hover) {
   opacity: 0.5;
   transform: scale(0.9);
 }
 
 .cardVenue{
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 0px 50px;
+  justify-content: center;
   a{
     text-decoration: none;
     color: white;
@@ -44,4 +48,37 @@
 .card-info{
   position: relative;
   bottom: -293px;
+}
+
+.card-product {
+  overflow: hidden;
+  height: 120px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+}
+
+.card-product img {
+  height: 100%;
+  width: 120px;
+  object-fit: cover;
+}
+
+.card-product h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-product p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.card-product .card-product-infos {
+  padding: 16px;
 }
