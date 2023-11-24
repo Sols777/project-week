@@ -5,10 +5,11 @@ class VenuesController < ApplicationController
     if params[:query].present?
       @venues = Venue.search_venues(params[:query])
     end
-  end 
+  end
 
   def show
     @venue = Venue.find(params[:id])
+    @filled_hands = [@venue.bustability / 20, 5].min
     @booking = Booking.new
     @markers = [{ lat: @venue.latitude,
                   lng: @venue.longitude,
