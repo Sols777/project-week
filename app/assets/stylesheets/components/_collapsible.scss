@@ -1,0 +1,52 @@
+
+.container-collapse {
+  display: flex;
+  padding: 20px;
+}
+
+.collapsible {
+  padding: 25px;
+  margin-bottom: 20px;
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: 1px 1px 3px #ddd;
+  max-width: 500px;
+}
+
+.left {
+  flex: 1; /* Take up 50% width */
+}
+
+.right {
+  flex: 1; /* Take up 50% width */
+}
+
+
+/* Content visible by default */
+.collapsible .content {
+  display: block;
+}
+
+/* Hide content when collapsed */
+.collapsible.active .content {
+  display: none;
+}
+
+.collapsible .content {
+  transition: height 0.3s ease;
+}
+
+/* Closed state - plus icon */
+h2:after {
+  content: "\2796"; /* Plus sign */
+}
+
+.collapsible.active h2:after {
+  content: "\2795";
+}
+
+/* Hover style */
+h2:hover {
+  background: #eee;
+  cursor: pointer;
+}
