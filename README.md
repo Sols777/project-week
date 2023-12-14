@@ -1,6 +1,6 @@
 Hi there 👋! I am Luis
 
-## RaveBral(Airbnb Clone):
+## RaveBrawl(Airbnb Clone):
 > This project was my first project @LeWagon Porto bootcamp in cooperation trough github with 2 other junior devs from the bootcamp.
 ## What is it about:
 <p>
